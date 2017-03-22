@@ -2,8 +2,7 @@
 #define _ENUM_H
 
 
-enum 
-{
+enum {
 	_EOF,
 	ERROR,
 	ELSE,

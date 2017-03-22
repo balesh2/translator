@@ -1,4 +1,4 @@
-#include "parser.h"
+#include"parser.h"
 
 /* ----------------------- PART 2 --------------------------
  * Title: Parser and Syntax Tree
@@ -10,16 +10,36 @@
  * --------------------------------------------------------- */
 
 
+/* ***************************************************************************
+ * Function: Parser
+ * Description: Parser class constructor
+ * Parameters: char* myFile - the name of the file to open and scan
+ * Returns: void
+ * *************************************************************************** */
+
 Parser::Parser(char* myFile) {
 	this->scan = new Scanner(myFile);
 }
+
+/* ***************************************************************************
+ * Function: ~Parser
+ * Description: Parser class destructor
+ * Parameters: void
+ * Returns: void
+ * *************************************************************************** */
 
 Parser::~Parser() {
 	delete this->scan;
 }
 
+/* ***************************************************************************
+ * Function: Parse
+ * Description: Start parsing
+ * Parameters: void
+ * Returns: TreeNode* root - the tree rooted at the token read from open file
+ * *************************************************************************** */
+
 TreeNode* Parser::Parse() {
-	//cout << "IN Parser::Parse()" << endl;
 
 	//get a token from the scanner
 	Token token = scan->getToken();
@@ -29,15 +49,34 @@ TreeNode* Parser::Parse() {
 	return root;
 }
 
+/* ***************************************************************************
+ * Function: printParseTree
+ * Description: prints the parse tree to parseTree.txt
+ * Parameters: void
+ * Returns: void
+ * *************************************************************************** */
 
 void Parser::printParseTree() {
+
+	//open target file - parseTree.txt
 	parseTreeFile.open("parseTree.txt");	
+
+	//write root node to file
 	parseTreeFile << "Root" << endl;
 	printNode(root);
+
+	//close target file
 	parseTreeFile.close();
 
 	return;
 }
+
+/* ***************************************************************************
+ * Function: printNode
+ * Description: prints the node to the target file
+ * Parameters: TreeNode* currentNode - the node to print to the file
+ * Returns: void
+ * *************************************************************************** */
 
 void Parser::printNode(TreeNode* currentNode) {
 	parseTreeFile << "Node Type: " << enumToString(currentNode->nodeType) << endl;
@@ -70,8 +109,14 @@ void Parser::printNode(TreeNode* currentNode) {
 	return;
 }
 
+/* ***************************************************************************
+ * Function: argsFunc
+ * Description: parses argument functions
+ * Parameters: Token token - the token to parse
+ * Returns: TreeNode* newNode - the new node created from the token
+ * *************************************************************************** */
+
 TreeNode* Parser::argsFunc(Token token) {
-	//cout << "IN Parser::argsFunc(Token token)" << endl;
 
 	TreeNode* newNode = new TreeNode();
 	Token newToken;
@@ -125,6 +170,13 @@ TreeNode* Parser::argsFunc(Token token) {
 	return newNode;
 }
 
+/* ***************************************************************************
+ * Function: argsListFunc
+ * Description: creates nodes for arguments list items
+ * Parameters: Token token - the token to parse
+ * Returns: TreeNode* newNode - the new node created from the token
+ * *************************************************************************** */
+
 TreeNode* Parser::argsListFunc(Token token) {
 	//cout << "IN Parser::argsListFunc(Token token)" << endl;
 
@@ -138,6 +190,13 @@ TreeNode* Parser::argsListFunc(Token token) {
 	return newNode;
 
 }
+
+/* ***************************************************************************
+ * Function: callFunc
+ * Description: creates a TreeNode for calling a function
+ * Parameters: Token token - the token to parse
+ * Returns: TreeNode* newNode - the new node created from the token
+ * *************************************************************************** */
 
 TreeNode* Parser::callFunc(Token token) {
 	//cout << "IN Parser::callFunc(Token token)" << endl;
@@ -171,6 +230,13 @@ TreeNode* Parser::callFunc(Token token) {
 
 	return newNode;
 }
+
+/* ***************************************************************************
+ * Function: callStmtFunc
+ * Description: creates a TreeNode for calling a statement
+ * Parameters: Token token - the token to parse
+ * Returns: TreeNode* newNode - the new node created from the token
+ * *************************************************************************** */
 
 TreeNode* Parser::callStmtFunc(Token token) {
 	TreeNode* newNode = new TreeNode();
@@ -216,6 +282,13 @@ TreeNode* Parser::callStmtFunc(Token token) {
 	return newNode;
 }
 
+/* ***************************************************************************
+ * Function: compareExprFunc
+ * Description: creates a TreeNode for comparing two expressions
+ * Parameters: Token token - the token to parse
+ * Returns: TreeNode* newNode - the new node created from the token
+ * *************************************************************************** */
+
 TreeNode* Parser::compareExprFunc(Token token) {
 	//cout << "IN Parser::compareExprFunc(Token token)" << endl;
 
@@ -232,6 +305,13 @@ TreeNode* Parser::compareExprFunc(Token token) {
 	newNode->C2 = expressionFunc(newToken);
 	return newNode;
 }
+
+/* ***************************************************************************
+ * Function: compoundStmtFunc
+ * Description: create a TreeNode for a compound statement
+ * Parameters: Token token - the token to parse
+ * Returns: TreeNode* newNode - the new node created from the token
+ * *************************************************************************** */
 
 TreeNode* Parser::compoundStmtFunc(Token token) {
 	//cout << "IN Parser::compoundStmtFunc(Token token)" << endl;
@@ -263,6 +343,13 @@ TreeNode* Parser::compoundStmtFunc(Token token) {
 
 	return newNode;
 }
+
+/* ***************************************************************************
+ * Function: expressionFunc
+ * Description: creates a TreeNode for an expression
+ * Parameters: Token token - the token to parse
+ * Returns: TreeNode* newNode - the new node created from the token
+ * *************************************************************************** */
 
 TreeNode* Parser::expressionFunc(Token token) {
 
@@ -315,6 +402,13 @@ TreeNode* Parser::expressionFunc(Token token) {
 
 }
 
+/* ***************************************************************************
+ * Function: funDeclFunc
+ * Description: creates a TreeNode for a function declaration
+ * Parameters: Token token - the token to parse
+ * Returns: TreeNode* newNode - the new node created from the token
+ * *************************************************************************** */
+
 TreeNode* Parser::funDeclFunc(Token token) {
 	//cout << "IN Parser::funDeclFunc(Token token)" << endl;
 
@@ -360,6 +454,13 @@ TreeNode* Parser::funDeclFunc(Token token) {
 	return newNode;
 }
 
+/* ***************************************************************************
+ * Function: gainFunc
+ * Description: creates a TreeNode for an assignment
+ * Parameters: Token token - the token to parse
+ * Returns: TreeNode* newNode - the new node created from the token
+ * *************************************************************************** */
+
 TreeNode* Parser::gainFunc(Token token) {
 	//cout << "IN Parser::gainFunc(Token token)" << endl;
 
@@ -399,6 +500,13 @@ TreeNode* Parser::gainFunc(Token token) {
 
 	return newNode;
 }
+
+/* ***************************************************************************
+ * Function: iterStmtFunc
+ * Description: creates a TreeNode for an iterative statement
+ * Parameters: Token token - the token to parse
+ * Returns: TreeNode* newNode - the new node created from the token
+ * *************************************************************************** */
 
 TreeNode* Parser::iterStmtFunc(Token token) {
 	//cout << "IN Parser::iterStmtFunc(Token token)" << endl;
@@ -441,6 +549,13 @@ TreeNode* Parser::iterStmtFunc(Token token) {
 	return newNode;
 }
 
+/* ***************************************************************************
+ * Function: localDeclFunc
+ * Description: creates a TreeNode for a local declaration
+ * Parameters: Token token - the token to parse
+ * Returns: TreeNode* newNode - the new node created from the token
+ * *************************************************************************** */
+
 TreeNode* Parser::localDeclFunc(Token token) {
 	//cout << "IN Parser::localDeclFunc(Token token)" << endl;
 
@@ -460,6 +575,13 @@ TreeNode* Parser::localDeclFunc(Token token) {
 	return newNode;
 
 }
+
+/* ***************************************************************************
+ * Function: localVarDeclFunc
+ * Description: creates a TreeNode for a local variable declaration
+ * Parameters: Token token - the token to parse
+ * Returns: TreeNode* newNode - the new node created from the token
+ * *************************************************************************** */
 
 TreeNode* Parser::localVarDeclFunc(Token token) {
 	//cout << "IN Parser::localVarDeclFunc(Token token)" << endl;
@@ -514,6 +636,13 @@ TreeNode* Parser::localVarDeclFunc(Token token) {
 	return newNode;
 }
 
+/* ***************************************************************************
+ * Function: numberFunction
+ * Description: creates a TreeNode for a number
+ * Parameters: Token token - the token to parse
+ * Returns: TreeNode* newNode - the new node created from the token
+ * *************************************************************************** */
+
 TreeNode* Parser::numberFunc(Token token) {
 
 	//cout << "IN Parser::numberFunc(Token token)" << endl;
@@ -532,6 +661,13 @@ TreeNode* Parser::numberFunc(Token token) {
 	return newNode;
 
 }
+
+/* ***************************************************************************
+ * Function: paramFunc
+ * Description: creates a TreeNode for a parameter
+ * Parameters: Token token - the token to parse
+ * Returns: TreeNode* newNode - the new node created from the token
+ * *************************************************************************** */
 
 TreeNode* Parser::paramFunc(Token token) {
 	//cout << "IN Parser::paramFunc(Token token)" << endl;
@@ -579,6 +715,13 @@ TreeNode* Parser::paramFunc(Token token) {
 	return newNode;
 }
 
+/* ***************************************************************************
+ * Function: paramsListFunc
+ * Description: creates a TreeNode for a parameters list
+ * Parameters: Token token - the token to parse
+ * Returns: TreeNode* newNode - the new node created from the token
+ * *************************************************************************** */
+
 TreeNode* Parser::paramsListFunc(Token token) {
 	//cout << "IN Parser::paramsListFunc(Token token)" << endl;
 
@@ -598,6 +741,13 @@ TreeNode* Parser::paramsListFunc(Token token) {
 
 	return newNode;
 }
+
+/* ***************************************************************************
+ * Function: programFunc
+ * Description: creates a TreeNode for a program
+ * Parameters: Token token - the token to parse
+ * Returns: TreeNode* newNode - the new node created from the token
+ * *************************************************************************** */
 
 TreeNode* Parser::programFunc(Token token) {
 	//cout << "IN Parse::programFuc(Token token)" << endl;
@@ -622,6 +772,13 @@ TreeNode* Parser::programFunc(Token token) {
 
 	return newNode;
 }
+
+/* ***************************************************************************
+ * Function: readStmtFunc
+ * Description: creates a TreeNode for a READ type token
+ * Parameters: Token token - the token to parse
+ * Returns: TreeNode* newNode - the new node created from the token
+ * *************************************************************************** */
 
 TreeNode* Parser::readStmtFunc(Token token) {
 	//cout << "IN Parser::readStmtFunc(Token token)" << endl;
@@ -656,6 +813,13 @@ TreeNode* Parser::readStmtFunc(Token token) {
 	return newNode;
 }
 
+/* ***************************************************************************
+ * Function: returnStmtFunc
+ * Description: creates a TreeNode for a return statement
+ * Parameters: Token token - the token to parse
+ * Returns: TreeNode* newNode - the new node created from the token
+ * *************************************************************************** */
+
 TreeNode* Parser::returnStmtFunc(Token token) {
 	//cout << "IN Parser::returnStmtFunc(Token token)" << endl;
 
@@ -689,6 +853,13 @@ TreeNode* Parser::returnStmtFunc(Token token) {
 
 	return newNode;
 }
+
+/* ***************************************************************************
+ * Function: selectStmtFunc
+ * Description: creates a TreeNode for a select statement
+ * Parameters: Token token - the token to parse
+ * Returns: TreeNode* newNode - the new node created from the token
+ * *************************************************************************** */
 
 TreeNode* Parser::selectStmtFunc(Token token) {
 	//cout << "IN Parser::selectStmtFunc(Token token)" << endl;
@@ -738,6 +909,13 @@ TreeNode* Parser::selectStmtFunc(Token token) {
 	return newNode;
 }
 
+/* ***************************************************************************
+ * Function: stmtFunc
+ * Description: creates a TreeNode for a statement
+ * Parameters: Token token - the token to parse
+ * Returns: TreeNode* newNode - the new node created from the token
+ * *************************************************************************** */
+
 TreeNode* Parser::stmtFunc(Token token) {
 	//cout << "IN Parser::stmtFunc(Token token)" << endl;
 
@@ -775,6 +953,13 @@ TreeNode* Parser::stmtFunc(Token token) {
 	}
 
 }
+
+/* ***************************************************************************
+ * Function: stmtListFunc
+ * Description: creates a TreeNode for a list of statements
+ * Parameters: Token token - the token to parse
+ * Returns: TreeNode* newNode - the new node created from the token
+ * *************************************************************************** */
 
 TreeNode* Parser::stmtListFunc(Token token) {
 	//cout << "IN Parser::stmtListFunc(Token token)" << endl;
@@ -818,6 +1003,13 @@ TreeNode* Parser::stmtListFunc(Token token) {
 	return newNode;
 
 }
+
+/* ***************************************************************************
+ * Function: varDeclFunc
+ * Description: creates a TreeNode for a variable declaration
+ * Parameters: Token token - the token to parse
+ * Returns: TreeNode* newNode - the new node created from the token
+ * *************************************************************************** */
 
 TreeNode* Parser::varDeclFunc(Token token) {
 	//cout << "IN Parser:varDeclFunc(Token token)" << endl;
@@ -881,6 +1073,13 @@ TreeNode* Parser::varDeclFunc(Token token) {
 	return newNode;
 }
 
+/* ***************************************************************************
+ * Function: varFunc
+ * Description: creates a TreeNode for a variable
+ * Parameters: Token token - the token to parse
+ * Returns: TreeNode* newNode - the new node created from the token
+ * *************************************************************************** */
+
 TreeNode* Parser::varFunc(Token token) {
 	//cout << "IN Parser::varFunc(Token token)" << endl;
 
@@ -914,6 +1113,13 @@ TreeNode* Parser::varFunc(Token token) {
 
 	return newNode;
 }
+
+/* ***************************************************************************
+ * Function: writeStmtFunc
+ * Description: creates a TreeNode for a WRITE type token
+ * Parameters: Token token - the token to parse
+ * Returns: TreeNode* newNode - the new node created from the token
+ * *************************************************************************** */
 
 TreeNode* Parser::writeStmtFunc(Token token) {
 	//cout << "IN Parser::writeStmtFunc(Token token)" << endl;

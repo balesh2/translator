@@ -1,11 +1,11 @@
-#include "treenode.h"
+#include"treenode.h"
 
 TreeNode::TreeNode() {
 	lineNumber = 0;
-	nValue = 0;
-	sValue = "NULL";
 	nodeType = 0;
-	typeSpecifier = 0;
+	nValue = 0;
 	rename = "NULL";
+	sValue = "NULL";
+	typeSpecifier = 0;
 	visited = 0;
 }

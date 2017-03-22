@@ -1,19 +1,19 @@
 #ifndef _PARSER_H
 #define _PARSER_H
 
-#include "enum.h"
-#include "scanner.h"
-#include "treenode.h"
-#include "token.h"
+#include"enum.h"
+#include"scanner.h"
+#include"treenode.h"
+#include"token.h"
 
-#include<stdio.h>
-#include<stdlib.h>
-#include<iostream>
-#include<fstream>
-#include<string>
-#include<cstring>
-#include<time.h>
-#include<unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <cstring>
+#include <time.h>
+#include <unistd.h>
 
 class Parser {
 	public:

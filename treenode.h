@@ -5,18 +5,19 @@
 
 using namespace std;
 
-class TreeNode 
-{
+class TreeNode {
 	public: 
 		TreeNode();
 
-		int lineNumber;
-		int nValue;
-		string sValue;
-		int nodeType;
-		int typeSpecifier;
-		string rename;
 		bool visited;
+
+		int lineNumber;
+		int nodeType;
+		int nValue;
+		int typeSpecifier;
+
+		string rename;
+		string sValue;
 
 		TreeNode *C1;
 		TreeNode *C2;
