@@ -1,0 +1,26 @@
+void f( int a[], int b[], int count ) {
+	int i;
+	i = 0;
+	if( count < 4 ) {
+		count = count + 1;
+		f( a, b, count );
+	}
+	else {
+		while( i < 5 ) {
+			write( a[ i ] + b[ i ] );
+			i = i + 1;
+		}
+	}
+}
+
+void main( void ) {
+	int b[5]; int c[5];
+	int i;
+	i = 0;
+	while( i < 5 ) {
+		b[ i ] = 7 + i * 10;
+		c[ i ] = i + 2;
+		i = i + 1;
+	}
+	f( b, c, 0 );
+}

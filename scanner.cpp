@@ -172,12 +172,11 @@ Token Scanner::getToken() {
 	} else if(peekedFurther == 1 && ignorePeek != 1) {
 		peekedFurther = 0;
 		newToken = peekFurtherToken;
-
-		token = strtok(NULL, " \t\r\a\n");
 	}else if(overflow == 1){
 		overflow = 0;
 		newToken = createNewToken(overflowToken);
 	} else{
+		token = strtok(NULL, " \t\r\a\n");
 		while(token == NULL) {
 			if(sourceFile.eof()) {
 				newToken.tokenType = END;
@@ -190,14 +189,11 @@ Token Scanner::getToken() {
 		}	
 		newToken = createNewToken(token);
 	}
-	cout << newToken.tokenValue << endl;
-	usleep(50000);
 
 	return newToken;
 }
 
 Token Scanner::peek() {
-	cout << "peek: ";
 	peekToken = getToken();
 	peeked = 1;
 
@@ -205,7 +201,6 @@ Token Scanner::peek() {
 }
 
 Token Scanner::peekFurther() {
-	cout << "peekFurther: ";
 	ignorePeek = 1;
 	peekFurtherToken = getToken();
 	peekedFurther = 1;

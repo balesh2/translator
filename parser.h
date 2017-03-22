@@ -17,44 +17,46 @@
 
 class Parser {
 	public:
-		TreeNode* Parse(); //Start Parser
+		Parser(char*); //Constructor
+		~Parser(); //Destructor
+		
+		TreeNode* Parse(); //Starts Parser
+		void printParseTree(); //Print resulting Parse tree
+		void printNode(TreeNode* currentNode); //Prints a node from the parse tree
 
-		Parser(char*);
-		~Parser();
-
-		TreeNode* programFunc(Token token); //declListFunc
-		TreeNode* varDeclFunc(Token token); //typeSpec ID ; | typeSpec ID [ NUM ] ;
-		// typeSpec -> int | void
-		TreeNode* funDeclFunc(Token token); //typeSpec ID ( params ) compoundStmt
-		TreeNode* paramsListFunc(Token token); //paramListFunc, paramFunc | paramFunc
-		TreeNode* paramFunc(Token token); //typeSpec ID | typeSpec ID [ ]
-		TreeNode* compoundStmtFunc(Token token); // { localDeclFunc stmtListFunc }
-		TreeNode* localDeclFunc(Token token); // localDeclFunc varDeclFunc | empty
-		TreeNode* localVarDeclFunc(Token token);
-		TreeNode* stmtListFunc(Token token); // stmtListFunc stmtFunc | empty
-		TreeNode* stmtFunc(Token token); // expressStmtFunc | compoundStmtFunc | selectStmtFunc | iterStmtFunc | returnStmtFunc
-		TreeNode* selectStmtFunc(Token token); //if ( expressionFunc ) stmtFunc | if ( expressionFunc ) stmtFunc else stmtFunc
-		TreeNode* iterStmtFunc(Token token); //while ( expressionFunc ) stmtFunc
-		TreeNode* returnStmtFunc(Token token); //return ; | return expressionFunc ;
-		TreeNode* readStmtFunc(Token token); //READ ID ;
-		TreeNode* writeStmtFunc(Token token); //WRITE ID ;
-		TreeNode* callStmtFunc(Token token); // ID ( argsFunc ) ;
-		TreeNode* callFunc(Token token); // ID ( argsFunc )
-		TreeNode* gainFunc(Token token); //varFunc = expressionFunc ;	
-		TreeNode* varFunc(Token token); //ID | ID [ expressionFunc ]
-		TreeNode* compareExprFunc(Token token); //addExprFunc relop addExprFunc | addExprFunc
-		TreeNode* expressionFunc(Token token); 
-		TreeNode* numberFunc(Token token);
-		// relop -> <= | < | > | >= | == | !=
-		// addop -> + | -
-		// mulop -> * | /
-		TreeNode* argsFunc(Token token); //argsListFunc | empty
-		TreeNode* argsListFunc(Token token); //argsListFunc , expressionFunc | expressionFunc
-
+	private:
+	
 		TreeNode* root; 
-
 		Scanner* scan;
-
+		ofstream parseTreeFile;
+		
+		
+		TreeNode* argsFunc(Token token);
+		TreeNode* argsListFunc(Token token);
+		TreeNode* callFunc(Token token);
+		TreeNode* callStmtFunc(Token token);
+		TreeNode* compareExprFunc(Token token);
+		TreeNode* compoundStmtFunc(Token token);
+		TreeNode* expressionFunc(Token token); 
+		TreeNode* funDeclFunc(Token token);
+		TreeNode* gainFunc(Token token);	
+		TreeNode* iterStmtFunc(Token token);
+		TreeNode* localDeclFunc(Token token);
+		TreeNode* localVarDeclFunc(Token token);
+		TreeNode* numberFunc(Token token);
+		TreeNode* paramFunc(Token token);
+		TreeNode* paramsListFunc(Token token);
+		TreeNode* programFunc(Token token);
+		TreeNode* readStmtFunc(Token token);
+		TreeNode* returnStmtFunc(Token token);
+		TreeNode* selectStmtFunc(Token token);
+		TreeNode* stmtFunc(Token token);
+		TreeNode* stmtListFunc(Token token);
+		TreeNode* varDeclFunc(Token token);
+		TreeNode* varFunc(Token token);
+		TreeNode* writeStmtFunc(Token token);
+		
+		string enumToString(int enumValue);
 };
 
 #endif

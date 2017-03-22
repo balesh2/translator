@@ -1,0 +1,651 @@
+Root
+Node Type: ID
+Line Number: 0
+Name: NULL
+Value: 0
+Data Type: NOTHING
+
+Sibling
+Node Type: ARRAY
+Line Number: 0
+Name: void
+Value: 0
+Data Type: RETURN
+
+Child 1
+Node Type: PARAMETER
+Line Number: 0
+Name: NULL
+Value: 0
+Data Type: NOTHING
+
+Sibling
+Node Type: VARIABLE
+Line Number: 0
+Name: a
+Value: 0
+Data Type: IF
+
+Sibling
+Node Type: VARIABLE
+Line Number: 0
+Name: b
+Value: 0
+Data Type: IF
+
+Sibling
+Node Type: DECLARATION
+Line Number: 0
+Name: count
+Value: 0
+Data Type: IF
+
+Child 2
+Node Type: CALL
+Line Number: 0
+Name: NULL
+Value: 0
+Data Type: NOTHING
+
+Child 1
+Node Type: PROGRAM
+Line Number: 1
+Name: NULL
+Value: 0
+Data Type: NOTHING
+
+Sibling
+Node Type: NOTHING
+Line Number: 1
+Name: i
+Value: 0
+Data Type: IF
+
+Child 2
+Node Type: PARAMETER
+Line Number: 2
+Name: NULL
+Value: 0
+Data Type: NOTHING
+
+Sibling
+Node Type: NEQ
+Line Number: 2
+Name: NULL
+Value: 0
+Data Type: NOTHING
+
+Child 1
+Node Type: DECLARATION
+Line Number: 2
+Name: i
+Value: 0
+Data Type: NOTHING
+
+Child 2
+Node Type: WRITE
+Line Number: 2
+Name: NULL
+Value: 0
+Data Type: NOTHING
+
+Sibling
+Node Type: STATEMENT_LIST
+Line Number: 3
+Name: if
+Value: 0
+Data Type: NOTHING
+
+Child 1
+Node Type: DIV
+Line Number: 3
+Name: NULL
+Value: 0
+Data Type: NOTHING
+
+Child 1
+Node Type: DECLARATION
+Line Number: 3
+Name: count
+Value: 0
+Data Type: NOTHING
+
+Child 2
+Node Type: WRITE
+Line Number: 3
+Name: NULL
+Value: 4
+Data Type: NOTHING
+
+Child 2
+Node Type: CALL
+Line Number: 3
+Name: NULL
+Value: 0
+Data Type: NOTHING
+
+Child 1
+Node Type: PROGRAM
+Line Number: 4
+Name: NULL
+Value: 0
+Data Type: NOTHING
+
+Child 2
+Node Type: PARAMETER
+Line Number: 4
+Name: NULL
+Value: 0
+Data Type: NOTHING
+
+Sibling
+Node Type: NEQ
+Line Number: 4
+Name: NULL
+Value: 0
+Data Type: NOTHING
+
+Child 1
+Node Type: DECLARATION
+Line Number: 4
+Name: count
+Value: 0
+Data Type: NOTHING
+
+Child 2
+Node Type: WHILE
+Line Number: 4
+Name: NULL
+Value: 0
+Data Type: NOTHING
+
+Child 1
+Node Type: DECLARATION
+Line Number: 4
+Name: count
+Value: 0
+Data Type: NOTHING
+
+Child 2
+Node Type: WRITE
+Line Number: 4
+Name: NULL
+Value: 1
+Data Type: NOTHING
+
+Sibling
+Node Type: EXPRESSION
+Line Number: 5
+Name: f
+Value: 0
+Data Type: RETURN
+
+Child 1
+Node Type: STATEMENT
+Line Number: 5
+Name: NULL
+Value: 0
+Data Type: NOTHING
+
+Sibling
+Node Type: NOTHING
+Line Number: 5
+Name: NULL
+Value: 0
+Data Type: NOTHING
+
+Sibling
+Node Type: NOTHING
+Line Number: 5
+Name: NULL
+Value: 0
+Data Type: NOTHING
+
+Sibling
+Node Type: NOTHING
+Line Number: 5
+Name: NULL
+Value: 0
+Data Type: NOTHING
+
+Child 3
+Node Type: CALL
+Line Number: 7
+Name: NULL
+Value: 0
+Data Type: NOTHING
+
+Child 1
+Node Type: PROGRAM
+Line Number: 8
+Name: NULL
+Value: 0
+Data Type: NOTHING
+
+Child 2
+Node Type: PARAMETER
+Line Number: 8
+Name: NULL
+Value: 0
+Data Type: NOTHING
+
+Sibling
+Node Type: STATEMENT_LIST
+Line Number: 8
+Name: while
+Value: 0
+Data Type: NOTHING
+
+Child 1
+Node Type: DIV
+Line Number: 8
+Name: NULL
+Value: 0
+Data Type: NOTHING
+
+Child 1
+Node Type: DECLARATION
+Line Number: 8
+Name: i
+Value: 0
+Data Type: NOTHING
+
+Child 2
+Node Type: WRITE
+Line Number: 8
+Name: NULL
+Value: 5
+Data Type: NOTHING
+
+Child 2
+Node Type: CALL
+Line Number: 8
+Name: NULL
+Value: 0
+Data Type: NOTHING
+
+Child 1
+Node Type: PROGRAM
+Line Number: 9
+Name: NULL
+Value: 0
+Data Type: NOTHING
+
+Child 2
+Node Type: PARAMETER
+Line Number: 9
+Name: NULL
+Value: 0
+Data Type: NOTHING
+
+Sibling
+Node Type: READ
+Line Number: 9
+Name: NULL
+Value: 0
+Data Type: NOTHING
+
+Child 1
+Node Type: WHILE
+Line Number: 9
+Name: NULL
+Value: 0
+Data Type: NOTHING
+
+Child 1
+Node Type: VARIABLE
+Line Number: 9
+Name: a
+Value: 0
+Data Type: NOTHING
+
+Child 1
+Node Type: DECLARATION
+Line Number: 9
+Name: i
+Value: 0
+Data Type: NOTHING
+
+Child 2
+Node Type: VARIABLE
+Line Number: 9
+Name: b
+Value: 0
+Data Type: NOTHING
+
+Child 1
+Node Type: DECLARATION
+Line Number: 9
+Name: i
+Value: 0
+Data Type: NOTHING
+
+Sibling
+Node Type: NEQ
+Line Number: 10
+Name: NULL
+Value: 0
+Data Type: NOTHING
+
+Child 1
+Node Type: DECLARATION
+Line Number: 10
+Name: i
+Value: 0
+Data Type: NOTHING
+
+Child 2
+Node Type: WHILE
+Line Number: 10
+Name: NULL
+Value: 0
+Data Type: NOTHING
+
+Child 1
+Node Type: DECLARATION
+Line Number: 10
+Name: i
+Value: 0
+Data Type: NOTHING
+
+Child 2
+Node Type: WRITE
+Line Number: 10
+Name: NULL
+Value: 1
+Data Type: NOTHING
+
+Sibling
+Node Type: ARRAY
+Line Number: 0
+Name: void
+Value: 0
+Data Type: RETURN
+
+Child 1
+Node Type: PARAMETER
+Line Number: 15
+Name: NULL
+Value: 0
+Data Type: RETURN
+
+Child 2
+Node Type: CALL
+Line Number: 15
+Name: NULL
+Value: 0
+Data Type: NOTHING
+
+Child 1
+Node Type: PROGRAM
+Line Number: 16
+Name: NULL
+Value: 0
+Data Type: NOTHING
+
+Sibling
+Node Type: VARIABLE
+Line Number: 16
+Name: b
+Value: 5
+Data Type: IF
+
+Sibling
+Node Type: VARIABLE
+Line Number: 16
+Name: c
+Value: 5
+Data Type: IF
+
+Sibling
+Node Type: NOTHING
+Line Number: 16
+Name: i
+Value: 0
+Data Type: IF
+
+Child 2
+Node Type: PARAMETER
+Line Number: 18
+Name: NULL
+Value: 0
+Data Type: NOTHING
+
+Sibling
+Node Type: NEQ
+Line Number: 18
+Name: NULL
+Value: 0
+Data Type: NOTHING
+
+Child 1
+Node Type: DECLARATION
+Line Number: 18
+Name: i
+Value: 0
+Data Type: NOTHING
+
+Child 2
+Node Type: WRITE
+Line Number: 18
+Name: NULL
+Value: 0
+Data Type: NOTHING
+
+Sibling
+Node Type: STATEMENT_LIST
+Line Number: 19
+Name: while
+Value: 0
+Data Type: NOTHING
+
+Child 1
+Node Type: DIV
+Line Number: 19
+Name: NULL
+Value: 0
+Data Type: NOTHING
+
+Child 1
+Node Type: DECLARATION
+Line Number: 19
+Name: i
+Value: 0
+Data Type: NOTHING
+
+Child 2
+Node Type: WRITE
+Line Number: 19
+Name: NULL
+Value: 5
+Data Type: NOTHING
+
+Child 2
+Node Type: CALL
+Line Number: 19
+Name: NULL
+Value: 0
+Data Type: NOTHING
+
+Child 1
+Node Type: PROGRAM
+Line Number: 20
+Name: NULL
+Value: 0
+Data Type: NOTHING
+
+Child 2
+Node Type: PARAMETER
+Line Number: 20
+Name: NULL
+Value: 0
+Data Type: NOTHING
+
+Sibling
+Node Type: NEQ
+Line Number: 20
+Name: NULL
+Value: 0
+Data Type: NOTHING
+
+Child 1
+Node Type: VARIABLE
+Line Number: 20
+Name: b
+Value: 0
+Data Type: NOTHING
+
+Child 1
+Node Type: DECLARATION
+Line Number: 20
+Name: i
+Value: 0
+Data Type: NOTHING
+
+Child 2
+Node Type: WHILE
+Line Number: 20
+Name: NULL
+Value: 0
+Data Type: NOTHING
+
+Child 1
+Node Type: WRITE
+Line Number: 20
+Name: NULL
+Value: 7
+Data Type: NOTHING
+
+Child 2
+Node Type: MINUS
+Line Number: 20
+Name: NULL
+Value: 0
+Data Type: NOTHING
+
+Child 1
+Node Type: DECLARATION
+Line Number: 20
+Name: i
+Value: 0
+Data Type: NOTHING
+
+Child 2
+Node Type: WRITE
+Line Number: 20
+Name: NULL
+Value: 10
+Data Type: NOTHING
+
+Sibling
+Node Type: NEQ
+Line Number: 21
+Name: NULL
+Value: 0
+Data Type: NOTHING
+
+Child 1
+Node Type: VARIABLE
+Line Number: 21
+Name: c
+Value: 0
+Data Type: NOTHING
+
+Child 1
+Node Type: DECLARATION
+Line Number: 21
+Name: i
+Value: 0
+Data Type: NOTHING
+
+Child 2
+Node Type: WHILE
+Line Number: 21
+Name: NULL
+Value: 0
+Data Type: NOTHING
+
+Child 1
+Node Type: DECLARATION
+Line Number: 21
+Name: i
+Value: 0
+Data Type: NOTHING
+
+Child 2
+Node Type: WRITE
+Line Number: 21
+Name: NULL
+Value: 2
+Data Type: NOTHING
+
+Sibling
+Node Type: NEQ
+Line Number: 22
+Name: NULL
+Value: 0
+Data Type: NOTHING
+
+Child 1
+Node Type: DECLARATION
+Line Number: 22
+Name: i
+Value: 0
+Data Type: NOTHING
+
+Child 2
+Node Type: WHILE
+Line Number: 22
+Name: NULL
+Value: 0
+Data Type: NOTHING
+
+Child 1
+Node Type: DECLARATION
+Line Number: 22
+Name: i
+Value: 0
+Data Type: NOTHING
+
+Child 2
+Node Type: WRITE
+Line Number: 22
+Name: NULL
+Value: 1
+Data Type: NOTHING
+
+Sibling
+Node Type: EXPRESSION
+Line Number: 24
+Name: f
+Value: 0
+Data Type: RETURN
+
+Child 1
+Node Type: STATEMENT
+Line Number: 24
+Name: NULL
+Value: 0
+Data Type: NOTHING
+
+Sibling
+Node Type: NOTHING
+Line Number: 24
+Name: NULL
+Value: 0
+Data Type: NOTHING
+
+Sibling
+Node Type: NOTHING
+Line Number: 24
+Name: NULL
+Value: 0
+Data Type: NOTHING
+
+Sibling
+Node Type: WRITE
+Line Number: 24
+Name: NULL
+Value: 0
+Data Type: NOTHING
+

@@ -1,6 +1,8 @@
 #include"token.h"
 #include"enum.h"
+#include"treenode.h"
 #include"scanner.h"
+#include"parser.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -13,21 +15,12 @@
 
 using namespace std;
 
-/* ----------------------- PART 2 --------------------------
- * Title: Parser and Syntax Tree
- * Description: The Parser is Part 2 of the Translator. It
- *    will take a program and check the syntax for 
- *    correctness.
- * Input: A C-File (.cm) filename as input from the user.
- * Output: Syntax errors printed to the screen.
- * --------------------------------------------------------- */
-/* --------------------- END PART 2 ------------------------ */
-
 int main(int argc, char *argv[]) {
 	Scanner* scan;
 	char* myFile;
 	Token token;
 	int count = 0;
+	TreeNode* root;
 
 	//check command line args
 	if(argc > 2) {
@@ -42,22 +35,14 @@ int main(int argc, char *argv[]) {
 	}
 
 	//init the scanner and open the file
-	scan = new Scanner(myFile);
+	Parser* parse = new Parser(myFile);
 
-	//tokenize
-	do {
-		token = (*scan).getToken();
-		count++;
-		cout << token.tokenValue << endl;
-		cout << "Token Number: " << count << endl;
-		cout.flush();
-	} while(token.tokenType != END);
-
-	cout << "Done Tokenizing" << endl;
+	//Run the parse Function
+	root = parse->Parse();
+	cout << "End of File" << endl;
 
 
-	cout << "Check: done tokenizing" << endl;
-
+	parse->printParseTree();
 
 	return 0;
 }
